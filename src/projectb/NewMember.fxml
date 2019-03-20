@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="386.0" prefWidth="435.0" style="-fx-background-color: lightgrey" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="projectb.NewMemberController">
+  <children>
+    <TextField id="lastName" fx:id="lastNameTF" layoutX="218.0" layoutY="96.0" prefWidth="200.0" />
+    <TextField fx:id="personalNumberTF" layoutX="218.0" layoutY="129.0" prefWidth="200.0" />
+    <TextField id="firstName" fx:id="firstNameTF" layoutX="218.0" layoutY="62.0" prefWidth="200.0" text="" />
+    <TextField fx:id="adressTF" layoutX="218.0" layoutY="164.0" prefWidth="200.0" />
+    <TextField fx:id="phoneNumberTF" layoutX="218.0" layoutY="201.0" prefWidth="200.0" />
+    <TextField fx:id="genderTF" layoutX="218.0" layoutY="236.0" prefWidth="200.0" />
+    <Label layoutX="41.0" layoutY="65.0" text="First name" />
+    <Label layoutX="41.0" layoutY="99.0" text="Last name" />
+    <Label layoutX="41.0" layoutY="132.0" text="Personal number" />
+    <Label layoutX="41.0" layoutY="167.0" text="Adress" />
+    <Label layoutX="41.0" layoutY="204.0" text="Phone number" />
+    <Label layoutX="41.0" layoutY="239.0" text="Gender" />
+    <Button layoutX="298.0" layoutY="296.0" mnemonicParsing="false" onAction="#addNewMember" text="Create member" />
+  </children>
+</AnchorPane>

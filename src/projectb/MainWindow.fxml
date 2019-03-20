@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="569.0" prefWidth="808.0" style="-fx-background-color: lightgrey;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="projectb.MainWindowController">
+  <children>
+    <TabPane layoutX="0.0" layoutY="0.0" prefHeight="569.0" prefWidth="808.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="Purchase">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
+              <children>
+                <Label layoutX="22.0" layoutY="36.0" text="CustomerID:">
+                  <font>
+                    <Font size="18.0" fx:id="x1" />
+                  </font>
+                </Label>
+                <TextField fx:id="custIdField" layoutX="146.0" layoutY="30.0" prefHeight="35.000099999997474" prefWidth="209.0" />
+                <Label font="$x1" layoutX="505.0" layoutY="481.0" text="Total price:" />
+                <Label fx:id="totalSumLabel" layoutX="602.0" layoutY="466.0" text="SUM">
+                  <font>
+                    <Font size="32.0" />
+                  </font>
+                </Label>
+                <ListView id="listOfItems" fx:id="listofitems" editable="true" layoutX="457.0" layoutY="40.0" prefHeight="414.0" prefWidth="290.0" style="-fx-font: 20pt &quot;Arial&quot;;" />
+                <Label font="$x1" layoutX="28.0" layoutY="101.0" text="Input item:" />
+                <TextField id="InputItemField" fx:id="inputItemField" layoutX="146.0" layoutY="95.0" onAction="#scanItem" prefHeight="35.0" prefWidth="209.0" />
+                <Label font="$x1" layoutX="16.0" layoutY="188.0" text="Scanned item:" />
+                <Label fx:id="itemLabel" font="$x1" layoutX="154.0" layoutY="182.0" prefHeight="35.0" prefWidth="238.0" text="ITEM" />
+                <Button fx:id="addButton" layoutX="146.0" layoutY="250.0" mnemonicParsing="false" onAction="#addButton" prefHeight="43.0" prefWidth="127.0" text="Add" />
+                <Button fx:id="removeButton" layoutX="146.0" layoutY="316.0" mnemonicParsing="false" onAction="#removeButton" prefHeight="40.0" prefWidth="127.0" text="Remove" />
+                <Button fx:id="checkoutButton" layoutX="43.0" layoutY="460.0" mnemonicParsing="false" onAction="#checkoutButton" prefHeight="40.0" prefWidth="127.0" text="Checkout" />
+                <Label fx:id="listOfItems" layoutX="438.0" layoutY="14.0" text="" />
+                <Label layoutX="564.0" layoutY="6.0" text="Items">
+                  <font>
+                    <Font size="24.0" />
+                  </font>
+                </Label>
+                <Button fx:id="clearListButton" layoutX="202.0" layoutY="460.0" mnemonicParsing="false" onAction="#clearList" prefHeight="40.000099999997474" prefWidth="127.0" text="Clear List" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Item stock">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
+              <children>
+                <ListView fx:id="itemsList" editable="true" layoutX="14.0" layoutY="89.0" prefHeight="361.0" prefWidth="780.0" style="-fx-font: 14pt &quot;Arial&quot;;" />
+                <Label layoutX="14.0" layoutY="23.0" prefWidth="119.0" text="Search item id:">
+                  <font>
+                    <Font size="16.0" />
+                  </font>
+                </Label>
+                <Button fx:id="mainAddItem" layoutX="61.0" layoutY="463.0" mnemonicParsing="false" onAction="#createAddItemWindow" text="Add item">
+                  <font>
+                    <Font size="20.0" fx:id="x2" />
+                  </font>
+                </Button>
+                <Button fx:id="mainRemoveItem" font="$x2" layoutX="214.0" layoutY="463.0" mnemonicParsing="false" onAction="#createRemoveItemWindow" text="Remove item" />
+                <Button fx:id="getAllItems" layoutX="477.0" layoutY="21.0" mnemonicParsing="false" onAction="#itemList" prefHeight="27.0" prefWidth="108.0" text="Get all items" />
+                <TextField fx:id="getItemId" layoutX="133.0" layoutY="23.0" prefWidth="200.0" />
+                <Button fx:id="searchItemField" layoutX="350.0" layoutY="21.0" mnemonicParsing="false" onAction="#itemIdField" prefHeight="27.0" prefWidth="108.0" text="Search" />
+                <Label layoutX="19.0" layoutY="62.0" prefWidth="629.0" text="Name   Id  Manufacturer Sell-price   Purchase-price  Available in stock  Purchasetime">
+                  <font>
+                    <Font size="14.0" />
+                  </font>
+                </Label>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Customers">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
+              <children>
+                <ListView fx:id="memberPrintTextBox" layoutX="14.0" layoutY="61.0" prefHeight="362.0" prefWidth="780.0" />
+                <Label font="$x1" layoutX="25.0" layoutY="20.0" text="Search member:" />
+                <TextField id="searchMemver" fx:id="searchMemberTextField" layoutX="167.0" layoutY="21.0" prefWidth="200.0" />
+                <Button font="$x1" layoutX="49.0" layoutY="463.0" mnemonicParsing="false" onAction="#createNewMember" text="New member" />
+                <Button layoutX="387.0" layoutY="22.0" mnemonicParsing="false" onAction="#searchMember" text="Search" />
+                <Button fx:id="searchAllCust" layoutX="460.0" layoutY="22.0" mnemonicParsing="false" onAction="#displayAllCust" text="Display all" />
+                <Button fx:id="removeCustButton" font="$x1" layoutX="218.0" layoutY="463.0" mnemonicParsing="false" onAction="#createRemoveCustWindow" text="Remove member" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Help">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
+              <children>
+                <TextArea editable="false" layoutX="566.0" layoutY="331.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" text="Credits:" wrapText="true" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Admin">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
+              <children>
+                <TextField id="pNumber" fx:id="pNum" layoutX="458.0" layoutY="155.0" prefWidth="200.0" />
+                <PasswordField fx:id="password" layoutX="458.0" layoutY="228.0" prefWidth="200.0" />
+                <Button id="deleteEmployee" fx:id="adminLogin" font="$x1" layoutX="458.0" layoutY="353.0" mnemonicParsing="false" onAction="#adminLogin" prefWidth="200.0" text="Admin Login" />
+                <Label id="pNumber" font="$x1" layoutX="150.0" layoutY="153.0" minHeight="21.999900000002526" prefHeight="21.999900000002526" prefWidth="213.0" text="Personal Number" />
+                <Label font="$x1" layoutX="150.0" layoutY="228.0" prefHeight="22.0001220703125" prefWidth="213.0" text="Password" />
+                <Label id="wrongpass" fx:id="wrongPass" layoutX="73.0" layoutY="359.0" prefHeight="24.0" prefWidth="200.0" text="" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>

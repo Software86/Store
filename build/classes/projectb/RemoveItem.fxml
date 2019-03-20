@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="293.0" prefWidth="426.0" style="-fx-background-color: lightgrey&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="projectb.RemoveItemController">
+  <children>
+    <Button fx:id="removeItem" layoutX="226.0" layoutY="181.0" mnemonicParsing="false" onAction="#removeItem" text="Remove item">
+      <font>
+        <Font size="18.0" />
+      </font>
+    </Button>
+    <TextField id="searchItemField" fx:id="searchItem" layoutX="161.0" layoutY="83.0" prefWidth="200.0" />
+    <Label layoutX="72.0" layoutY="86.0" text="Input item id:" />
+  </children>
+</AnchorPane>
